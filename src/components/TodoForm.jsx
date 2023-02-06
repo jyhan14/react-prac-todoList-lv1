@@ -1,20 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import './todoForm.css';
 
-const TodoForm = () =>{
+const TodoForm = ({todos, setTodos}) =>{
+    const firstState ={
+        id:0,
+        title:"",
+        body:"",
+        isDone:false,
+    }
+
+    const [todo, setTodo] = useState(firstState);
+    
+    const onChangeHandler = (e) => {
+        const {name, value} = e.target;
+        setTodo({...todo, [name]:value, id:todos.length + 1});
+    }
+
     return(
-        <form className="todoForm">
-            <div className="inputs" style={{display:"flex"}}>
-                <label>제목 : </label>
-                <input type="text" />
-                <label>내용 : </label>
-                <input type="text" />
-            </div>
+<form className="todoForm" onSubmit={(e) => {
+    e.preventDefault();
+    setTodos([...todos,todo]);
+    setTodo(firstState);
+}}>
 
-            <button type="submit">추가하기</button>
+<div className="inputs">
+    <label>제목 : </label>
+    <input type="text" name="title" value={todo.title} onInput={onChangeHandler}/>
+    <label>내용 : </label>
+    <input type="text" name="body" value={todo.body} onChange={onChangeHandler} />
+</div>
+
+<button>추가하기</button>
 
 
-        </form>
+
+</form>
+
+
     )
 }
 
