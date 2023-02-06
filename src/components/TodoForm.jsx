@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoInsert = () =>{
+const TodoForm = () =>{
     return(
         <form style={{display:"flex", justifyContent:"space-between", background:"#eee", padding:"30px"}}>
             <div style={{display:"flex"}}>
@@ -17,4 +17,4 @@ const TodoInsert = () =>{
     )
 }
 
-export default TodoInsert;
+export default TodoForm;

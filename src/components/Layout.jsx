@@ -1,25 +1,15 @@
 import React from "react";
+import './Layout.css';
 
 function Layout(props) {
     return (
         <>
-        <div style={{
-            margin: "auto",
-            maxWidth: "1200px",
-            minWidth: "800px",
-        }}>
-            <header
-                style={{
-                    padding:"20px",
-                    border: "1px solid black"
-                }}
-            >   
-            <div style={{display:"flex", justifyContent:"space-between"}}>
+        <div className="layout">
+            <div className="header">   
                 <div>My TodoList</div>
                 <div>React</div>
             </div>
-            </header>
-            <div style={{
+            <div className="todoForm" style={{
                 border: "1px solid red"
             }}>
             {props.children}

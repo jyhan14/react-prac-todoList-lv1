@@ -1,13 +1,13 @@
 import './App.css';
 import Layout from './components/Layout';
-import TodoInsert from './components/TodoInsert';
+import TodoForm from './components/TodoForm';
 import TodoItems from './components/TodoItems';
 
 function App() {
   return (
     <>
     <Layout>
-      <TodoInsert/>
+      <TodoForm/>
       <TodoItems/>
     </Layout>
     </>
