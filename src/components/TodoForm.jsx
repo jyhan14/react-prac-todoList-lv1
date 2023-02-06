@@ -1,9 +1,10 @@
 import React from "react";
+import './todoForm.css';
 
 const TodoForm = () =>{
     return(
-        <form style={{display:"flex", justifyContent:"space-between", background:"#eee", padding:"30px"}}>
-            <div style={{display:"flex"}}>
+        <form className="todoForm">
+            <div className="inputs" style={{display:"flex"}}>
                 <label>제목 : </label>
                 <input type="text" />
                 <label>내용 : </label>

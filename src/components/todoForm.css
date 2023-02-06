@@ -1,0 +1,17 @@
+.todoForm {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: #eee;
+    
+    border-radius: 12px;
+    
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.inputs {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}

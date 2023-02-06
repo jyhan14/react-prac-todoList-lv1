@@ -1,5 +1,5 @@
 import React from "react";
-import './Layout.css';
+import './layout.css';
 
 function Layout(props) {
     return (
@@ -9,7 +9,7 @@ function Layout(props) {
                 <div>My TodoList</div>
                 <div>React</div>
             </div>
-            <div className="todoForm" style={{
+            <div style={{
                 border: "1px solid red"
             }}>
             {props.children}
