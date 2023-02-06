@@ -22,7 +22,6 @@ const TodoItems = ({todos,setTodos}) => {
             </div>
             <h2 className="title">Done</h2>
             <div className="itemsWrapper">
-        
                 {todos.map((todo) => {
                         if(todo.isDone){
                             return (
@@ -36,7 +35,6 @@ const TodoItems = ({todos,setTodos}) => {
                             return null;
                         }
                     })}
-                
             </div>
         </div>
     );

@@ -15,7 +15,7 @@ function App() {
   {
     id: 1,
     title: "완료 test",
-    body: "리액트 기초를 공부해봅시다.",
+    body: "isDone에 true 넣어보기!",
     isDone: true,
   },
 ]);
