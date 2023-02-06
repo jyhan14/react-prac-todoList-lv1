@@ -12,7 +12,11 @@ const TodoItems = ({todos,setTodos}) => {
                     {todos.map((todo) => {
                         if(!todo.isDone){
                             return (
-                                <Todo/>
+                                <Todo
+                                todo = {todo}
+                                key={todo.id}
+                                setTodos={setTodos}
+                                />
                             );
                         }
                     })}
@@ -21,7 +25,19 @@ const TodoItems = ({todos,setTodos}) => {
             <h2 className="title">Done</h2>
             <div className="itemsWrapper">
                 <div className="todoContainer">
-                    
+                {todos.map((todo) => {
+                        if(todo.isDone){
+                            return (
+                                <Todo
+                                todo = {todo}
+                                key={todo.id}
+                                setTodos={setTodos}
+                                />
+                            );
+                        }else{
+                            return null;
+                        }
+                    })}
                 </div>
             </div>
         </div>
