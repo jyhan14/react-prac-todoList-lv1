@@ -2,7 +2,7 @@ import React from "react";
 
 const TodoInsert = () =>{
     return(
-        <form style={{display:"flex", justifyContent:"space-between"}}>
+        <form style={{display:"flex", justifyContent:"space-between", background:"#eee", padding:"30px"}}>
             <div style={{display:"flex"}}>
                 <label>제목 : </label>
                 <input type="text" />
@@ -10,7 +10,7 @@ const TodoInsert = () =>{
                 <input type="text" />
             </div>
 
-                <input type="submit" value={"추가하기"}/>
+            <button type="submit">추가하기</button>
 
 
         </form>

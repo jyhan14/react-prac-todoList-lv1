@@ -20,7 +20,6 @@ function Layout(props) {
             </div>
             </header>
             <div style={{
-                padding: "30px",
                 border: "1px solid red"
             }}>
             {props.children}
