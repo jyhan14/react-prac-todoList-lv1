@@ -3,20 +3,30 @@ import React from "react";
 function Layout(props) {
     return (
         <>
-        <header
-            style={{
-                margin: "10px",
-                border: "1px solid red",
-                maxWidth: "1200px",
-                minWidth: "800px",
-            }}
-        >   
-        <div style={{display:"flex", justifyContent:"space-between"}}>
-            <div>My TodoList</div>
-            <div>React</div>
+        <div style={{
+            margin: "auto",
+            maxWidth: "1200px",
+            minWidth: "800px",
+        }}>
+            <header
+                style={{
+                    padding:"20px",
+                    border: "1px solid black"
+                }}
+            >   
+            <div style={{display:"flex", justifyContent:"space-between"}}>
+                <div>My TodoList</div>
+                <div>React</div>
+            </div>
+            </header>
+            <div style={{
+                padding: "30px",
+                border: "1px solid red"
+            }}>
+            {props.children}
+            </div>
         </div>
-        </header>
-        {props.children}
+        
         </>
     );
 }

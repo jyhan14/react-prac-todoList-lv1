@@ -1,11 +1,12 @@
 import './App.css';
 import Layout from './components/Layout';
+import TodoInsert from './components/TodoInsert';
 
 function App() {
   return (
     <>
     <Layout>
-    <div>My TodoList</div>
+      <TodoInsert/>
     </Layout>
     </>
   );
