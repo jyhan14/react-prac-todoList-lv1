@@ -5,13 +5,25 @@ import TodoForm from './components/TodoForm';
 import TodoItems from './components/TodoItems';
 
 function App() {
-  const [todos, setTodos] = useState ([{id:0, title:"", body:"", isDone:"false"}]);
-
+  const [todos,setTodos]=useState([
+    {
+    id: 1,
+    title: "리액트 공부하기",
+    body: "리액트 기초를 공부해봅시다.",
+    isDone: false,
+  },
+  {
+    id: 2,
+    title: "리액트 공부하기",
+    body: "리액트 기초를 공부해봅시다.",
+    isDone: true,
+  },
+]);
   return (
     <>
     <Layout>
       <TodoForm todos={todos} setTodos={setTodos}/>
-      <TodoItems />
+      <TodoItems todos={todos} setTodos={setTodos}/>
     </Layout>
     </>
   );
