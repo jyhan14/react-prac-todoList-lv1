@@ -8,7 +8,6 @@ const TodoItems = ({todos,setTodos}) => {
         <div className="todoItems">
             <h2 className="title">Working</h2>
             <div className="itemsWrapper">
-                <div className="todoContainer">
                     {todos.map((todo) => {
                         if(!todo.isDone){
                             return (
@@ -20,11 +19,10 @@ const TodoItems = ({todos,setTodos}) => {
                             );
                         }
                     })}
-                </div>
             </div>
             <h2 className="title">Done</h2>
             <div className="itemsWrapper">
-                <div className="todoContainer">
+        
                 {todos.map((todo) => {
                         if(todo.isDone){
                             return (
@@ -38,7 +36,7 @@ const TodoItems = ({todos,setTodos}) => {
                             return null;
                         }
                     })}
-                </div>
+                
             </div>
         </div>
     );

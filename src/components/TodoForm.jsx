@@ -32,8 +32,6 @@ const TodoForm = ({todos, setTodos}) =>{
 
 <button>추가하기</button>
 
-
-
 </form>
 
 
