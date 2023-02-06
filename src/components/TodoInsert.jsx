@@ -4,12 +4,14 @@ const TodoInsert = () =>{
     return(
         <form style={{display:"flex", justifyContent:"space-between"}}>
             <div style={{display:"flex"}}>
-                <div style={{paddingRight: "10px"}}>제목 : <input type="text" /></div>
-                <div>내용 : <input type="text" /></div>
+                <label>제목 : </label>
+                <input type="text" />
+                <label>내용 : </label>
+                <input type="text" />
             </div>
-            <div>
+
                 <input type="submit" value={"추가하기"}/>
-            </div>
+
 
         </form>
     )
