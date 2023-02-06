@@ -1,4 +1,5 @@
 import React from "react";
+import './todoItems.css';
 
 const TodoItems = () => {
     return(
