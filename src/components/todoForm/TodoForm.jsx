@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './todoForm.css';
+import "./todoForm.css";
 
 const TodoForm = ({ todos, setTodos }) => {
 
@@ -7,7 +7,7 @@ const TodoForm = ({ todos, setTodos }) => {
     const [body, setBody] = useState("");
 
     const titleChangeHandler = (e) => {
-        setTitle(e.target.value);     
+        setTitle(e.target.value);
     };
 
     const bodyChangeHandler = (e) => {
@@ -19,28 +19,27 @@ const TodoForm = ({ todos, setTodos }) => {
 
         //id: todos.length + 1,
         //todos[todos.length -1].id + 1,
+        //todos.length == 0 ? 1 : todos[todos.length -1].id + 1,
         const newTodos = {
-            id: todos[todos.length -1].id + 1,
+            id: todos.length == 0 ? 1 : todos[todos.length -1].id + 1,
             title,
             body,
             isDone: false,
         };
 
-        if(title == ''){
-            alert('제목을 입력하세요!')
-        }else if(body == ''){
-            alert('내용을 입력하세요!')
-        }else{
-            
+        if (title == "") {
+            alert("제목을 입력하세요!");
+        } else if (body == "") {
+            alert("내용을 입력하세요!");
+        } else {
             setTodos([...todos, newTodos]);
         }
-        setTitle('');   //추가하고 제목인풋창 클리어
-        setBody('');    //추가하고 내용인풋창 클리어
+        setTitle(""); //추가하고 제목인풋창 클리어
+        setBody(""); //추가하고 내용인풋창 클리어
 
-    
     };
 
-    let test = todos.map(function(e){
+    let test = todos.map(function (e) {
         return e.id;
     });
     console.log(test);
@@ -67,11 +66,12 @@ const TodoForm = ({ todos, setTodos }) => {
                     onChange={titleChangeHandler}
                 />
                 <label>내용 : </label>
-                <input 
-                className="inputbox"
-                type="text" 
-                value={body} 
-                onChange={bodyChangeHandler}/>
+                <input
+                    className="inputbox"
+                    type="text"
+                    value={body}
+                    onChange={bodyChangeHandler}
+                />
             </div>
             <button className="addBtn">추가하기</button>
         </form>
