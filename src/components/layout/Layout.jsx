@@ -9,9 +9,7 @@ function Layout(props) {
                 <div>My TodoList</div>
                 <div>React</div>
             </div>
-            <div style={{
-                border: "1px solid red"
-            }}>
+            <div>
             {props.children}
             </div>
         </div>

@@ -1,30 +1,20 @@
 import React from "react";
 import './todo.css';
 
-function Todo({todo, setTodos, todos}) {
-
-    const deleteButton = (id) => {
-        const newTodos =  todos.filter(todo => todo.id !== id);
-        setTodos(newTodos);
-    }
+const Todo = ({ todo, deleteTodos, updateTodos }) => {
     return (
         <div className="todoContainer">
-            <div>  
+            <div>
                 <h2>{todo.title}</h2>
                 <div>{todo.body}</div>
             </div>
 
             <div className="btns" >
-                <button onClick={() => deleteButton(todo.id)}>
-                    삭제
-                </button>
-                <button>
-                    {todo.isDone ? "취소" : "완료"}
-                </button>
+                <button onClick={() => deleteTodos(todo.id)}>삭제</button>
+                <button onClick={() => updateTodos(todo.id)}>{todo.isDone ? "취소" : "완료"}</button>
             </div>
         </div>
-        
     );
-}
+};
 
 export default Todo;
