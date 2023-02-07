@@ -34,9 +34,9 @@ const TodoForm = ({ todos, setTodos }) => {
                     type="text"
                     value={title}
                     onChange={titleChangeHandler}
-                />
+                required/>
                 <label>내용 : </label>
-                <input type="text" value={body} onChange={bodyChangeHandler} />
+                <input type="text" value={body} onChange={bodyChangeHandler} required/>
             </div>
             <button>추가하기</button>
         </form>
