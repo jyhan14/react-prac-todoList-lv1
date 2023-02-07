@@ -31,14 +31,19 @@ const TodoForm = ({ todos, setTodos }) => {
             <div className="inputs">
                 <label>제목 : </label>
                 <input
+                    className="inputbox"
                     type="text"
                     value={title}
                     onChange={titleChangeHandler}
-                />
+                required/>
                 <label>내용 : </label>
-                <input type="text" value={body} onChange={bodyChangeHandler} />
+                <input 
+                className="inputbox"
+                type="text" 
+                value={body} 
+                onChange={bodyChangeHandler} required/>
             </div>
-            <button>추가하기</button>
+            <button className="addBtn">추가하기</button>
         </form>
     );
 };
