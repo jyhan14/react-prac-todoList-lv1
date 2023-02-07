@@ -5,6 +5,7 @@ function App() {
         <div>
             <Layout>
               <TodoForm />
+              <TodoItems />
             </Layout>
         </div>
     );
@@ -45,5 +46,20 @@ const TodoForm = () => {
         </form>
     );
 };
+
+const TodoItems = () => {
+  return (
+    <div className="todoItems">
+            <h2 className="title">Working</h2>
+            <div className="itemsWrapper">
+                    
+            </div>
+            <h2 className="title">Done</h2>
+            <div className="itemsWrapper">
+
+            </div>
+        </div>
+  );
+}
 
 export default App;
