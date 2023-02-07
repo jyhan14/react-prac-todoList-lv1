@@ -23,12 +23,14 @@ const TodoForm = ({ todos, setTodos }) => {
             isDone: false,
         };
 
-        if(e.target.value == ''){
-            alert('ddd')
+        if(title == ''){
+            alert('제목을 입력하세요!')
+        }else if(body == ''){
+            alert('내용을 입력하세요!')
+        }else{
+            //원래있던 todos를 스프레드연산자로 풀어주고, 거기서 newTodos를 다시 넣은 것!
+            setTodos([...todos, newTodos]);
         }
-
-        //원래있던 todos를 스프레드연산자로 풀어주고, 거기서 newTodos를 다시 넣은 것!
-        setTodos([...todos, newTodos]);
         setTitle('');   //추가하고 제목인풋창 클리어
         setBody('');    //추가하고 내용인풋창 클리어
     
@@ -42,13 +44,13 @@ const TodoForm = ({ todos, setTodos }) => {
                     type="text"
                     value={title}
                     onChange={titleChangeHandler}
-                required/>
+                />
                 <label>내용 : </label>
                 <input 
                 className="inputbox"
                 type="text" 
                 value={body} 
-                onChange={bodyChangeHandler} required/>
+                onChange={bodyChangeHandler}/>
             </div>
             <button className="addBtn">추가하기</button>
         </form>
