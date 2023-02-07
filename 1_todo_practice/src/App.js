@@ -95,6 +95,21 @@ const TodoItems = ({ todos, setTodos }) => {
     setTodos(newTodos);
   };
 
+  const updateTodos = (id) => { 
+    //https://react.vlpt.us/basic/15-array-modify.html 참고.. 잘 모르겠음..!
+    setTodos(todos.map(todo => todo.id === id ? {...todo, isDone: !todo.isDone } : todo))
+    // const newTodos = todos.map((todo) => {
+    //   if(todo.id === id){
+    //     return{
+    //         ...todo,isDone: !todo.isDone,
+    //     };
+    //   }else{
+    //     return {...todo};
+    //   }
+    // });
+    // setTodos(newTodos);
+  }
+
     return (
         <div className="todoItems">
             <h2 className="title">Working</h2>
@@ -106,6 +121,7 @@ const TodoItems = ({ todos, setTodos }) => {
                                 key={todo.id}
                                 todo={todo}
                                 deleteTodos={deleteTodos}
+                                updateTodos={updateTodos}
                             />
                         );
                     }
@@ -120,6 +136,7 @@ const TodoItems = ({ todos, setTodos }) => {
                                 key={todo.id}
                                 todo={todo}
                                 deleteTodos={deleteTodos}
+                                updateTodos={updateTodos}
                             />
                         );
                     } else return null;
@@ -129,7 +146,7 @@ const TodoItems = ({ todos, setTodos }) => {
     );
 };
 
-const Todo = ({ todo, deleteTodos }) => {
+const Todo = ({ todo, deleteTodos, updateTodos }) => {
     return (
         <div className="todoContainer">
             <div>
@@ -139,7 +156,7 @@ const Todo = ({ todo, deleteTodos }) => {
 
             <div className="btns" >
                 <button onClick={() => deleteTodos(todo.id)}>삭제</button>
-                <button>{todo.isDone ? "취소" : "완료"}</button>
+                <button onClick={() => updateTodos(todo.id)}>{todo.isDone ? "취소" : "완료"}</button>
             </div>
         </div>
     );
