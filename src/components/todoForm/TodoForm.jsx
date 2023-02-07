@@ -1,41 +1,46 @@
 import React, { useState } from "react";
 import './todoForm.css';
 
-const TodoForm = ({todos, setTodos}) =>{
-    const firstState ={
-        id:0,
-        title:"",
-        body:"",
-        isDone:false,
-    }
+const TodoForm = ({ todos, setTodos }) => {
+    const [title, setTitle] = useState("");
+    const [body, setBody] = useState("");
 
-    const [todo, setTodo] = useState(firstState);
-    
-    const onChangeHandler = (e) => {
-        const {name, value} = e.target;
-        setTodo({...todo, [name]:value, id:todos.length + 1});
-    }
+    const titleChangeHandler = (e) => {
+        setTitle(e.target.value);
+    };
 
-    return(
-<form className="todoForm" onSubmit={(e) => {
-    e.preventDefault();
-    setTodos([...todos,todo]);
-    setTodo(firstState);
-}}>
+    const bodyChangeHandler = (e) => {
+        setBody(e.target.value);
+    };
 
-<div className="inputs">
-    <label>제목 : </label>
-    <input type="text" name="title" value={todo.title} onInput={onChangeHandler}/>
-    <label>내용 : </label>
-    <input type="text" name="body" value={todo.body} onChange={onChangeHandler} />
-</div>
+    const addTodos = (e) => {
+        e.preventDefault();
 
-<button>추가하기</button>
+        const newTodos = {
+            id: todos.length + 1,
+            title,
+            body,
+            isDone: false,
+        };
 
-</form>
-
-
-    )
-}
+        //원래있던 todos를 스프레드연산자로 풀어주고, 거기서 newTodos를 다시 넣은 것!
+        setTodos([...todos, newTodos]);
+    };
+    return (
+        <form className="todoForm" onSubmit={addTodos}>
+            <div className="inputs">
+                <label>제목 : </label>
+                <input
+                    type="text"
+                    value={title}
+                    onChange={titleChangeHandler}
+                />
+                <label>내용 : </label>
+                <input type="text" value={body} onChange={bodyChangeHandler} />
+            </div>
+            <button>추가하기</button>
+        </form>
+    );
+};
 
 export default TodoForm;
