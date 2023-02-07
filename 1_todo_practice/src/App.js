@@ -3,12 +3,14 @@ import "./App.css";
 function App() {
     return (
         <div>
-            <Layout></Layout>
+            <Layout>
+              <TodoForm />
+            </Layout>
         </div>
     );
 }
 
-const Layout = () => {
+const Layout = (props) => {
     return (
         <>
             <div className="layout">
@@ -22,7 +24,25 @@ const Layout = () => {
                     }}
                 ></div>
             </div>
+            {props.children}
         </>
+    );
+};
+
+const TodoForm = () => {
+    return (
+        <form className="todoForm">
+            <div className="inputs">
+                <label>제목 : </label>
+                <input
+                    type="text"/>
+                <label>내용 : </label>
+                <input
+                    type="text"/>
+            </div>
+
+            <button>추가하기</button>
+        </form>
     );
 };
 
