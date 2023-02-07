@@ -1,23 +1,21 @@
 import React from "react";
 import './layout.css';
 
-const Layout = (props) => {
+function Layout(props) {
     return (
         <>
-            <div className="layout">
-                <div className="header">
-                    <div>My TodoList</div>
-                    <div>React</div>
-                </div>
-                <div
-                    style={{
-                        border: "1px solid red",
-                    }}
-                ></div>
+        <div className="layout">
+            <div className="header">   
+                <div>My TodoList</div>
+                <div>React</div>
             </div>
+            <div>
             {props.children}
+            </div>
+        </div>
+        
         </>
     );
-};
+}
 
 export default Layout;
