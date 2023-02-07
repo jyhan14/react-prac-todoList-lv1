@@ -6,7 +6,7 @@ const TodoForm = ({ todos, setTodos }) => {
     const [body, setBody] = useState("");
 
     const titleChangeHandler = (e) => {
-        setTitle(e.target.value);
+        setTitle(e.target.value);     
     };
 
     const bodyChangeHandler = (e) => {
@@ -23,8 +23,15 @@ const TodoForm = ({ todos, setTodos }) => {
             isDone: false,
         };
 
+        if(e.target.value == ''){
+            alert('ddd')
+        }
+
         //원래있던 todos를 스프레드연산자로 풀어주고, 거기서 newTodos를 다시 넣은 것!
         setTodos([...todos, newTodos]);
+        setTitle('');   //추가하고 제목인풋창 클리어
+        setBody('');    //추가하고 내용인풋창 클리어
+    
     };
     return (
         <form className="todoForm" onSubmit={addTodos}>

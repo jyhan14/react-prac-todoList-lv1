@@ -9,22 +9,15 @@ const TodoItems = ({ todos, setTodos }) => {
     };
 
     const updateTodos = (id) => {
-        //https://react.vlpt.us/basic/15-array-modify.html 참고.. 잘 모르겠음..!
+        //https://react.vlpt.us/basic/15-array-modify.html 참고
+        // todos를 map으로 풀어주고, 그 안의 값들 중 todo.id가 받아온 id와 같을때,
+        // todo를 풀어주고, isDone을 반대의 값을 넣어준다.
+        // 같지않을때는 그냥 todo(냅두기)
         setTodos(
             todos.map((todo) =>
                 todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
             )
         );
-        // const newTodos = todos.map((todo) => {
-        //   if(todo.id === id){
-        //     return{
-        //         ...todo,isDone: !todo.isDone,
-        //     };
-        //   }else{
-        //     return {...todo};
-        //   }
-        // });
-        // setTodos(newTodos);
     };
 
     return (
