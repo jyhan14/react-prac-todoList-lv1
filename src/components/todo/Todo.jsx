@@ -1,7 +1,12 @@
 import React from "react";
 import './todo.css';
 
-function Todo({todo, setTodos}) {
+function Todo({todo, setTodos, todos}) {
+
+    const deleteButton = (id) => {
+        const newTodos =  todos.filter(todo => todo.id !== id);
+        setTodos(newTodos);
+    }
     return (
         <div className="todoContainer">
             <div>  
@@ -9,8 +14,8 @@ function Todo({todo, setTodos}) {
                 <div>{todo.body}</div>
             </div>
 
-            <div className="btns">
-                <button>
+            <div className="btns" >
+                <button onClick={() => deleteButton(todo.id)}>
                     삭제
                 </button>
                 <button>

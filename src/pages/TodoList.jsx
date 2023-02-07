@@ -6,13 +6,13 @@ import TodoItems from "../components/todoItems/TodoItems";
 const TodoList = () => {
     const [todos, setTodos] = useState([
         {
-            id: 0,
+            id: 1,
             title: "리액트 공부하기",
             body: "리액트 기초를 공부해봅시다.",
             isDone: false,
         },
         {
-            id: 1,
+            id: 2,
             title: "완료 test",
             body: "isDone에 true 넣어보기!",
             isDone: true,

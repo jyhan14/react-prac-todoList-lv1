@@ -15,6 +15,7 @@ const TodoItems = ({todos,setTodos}) => {
                                 todo = {todo}
                                 key={todo.id}
                                 setTodos={setTodos}
+                                todos ={todos}
                                 />
                             );
                         }
@@ -29,6 +30,7 @@ const TodoItems = ({todos,setTodos}) => {
                                 todo = {todo}
                                 key={todo.id}
                                 setTodos={setTodos}
+                                todos ={todos}
                                 />
                             );
                         }else{
