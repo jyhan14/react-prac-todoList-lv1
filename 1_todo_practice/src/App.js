@@ -1,11 +1,24 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [todos, setTodos] = useState([{
+    id: 1, 
+    title: "삭제기능 구현하기", 
+    body: "2/7일까지 완료해야합니다.", 
+    isDone: false},
+
+    {id: 2, 
+    title: "추가기능 구현하기", 
+    body: "2월 6일까지 완료해야합니다.", 
+    isDone: true}
+  ]);
+
     return (
         <div>
             <Layout>
-                <TodoForm />
-                <TodoItems />
+                <TodoForm todos={todos} setTodos={setTodos}/>
+                <TodoItems todos={todos} setTodos={setTodos}/>
             </Layout>
         </div>
     );
@@ -30,7 +43,7 @@ const Layout = (props) => {
     );
 };
 
-const TodoForm = () => {
+const TodoForm = ({todos, setTodos}) => {
     return (
         <form className="todoForm">
             <div className="inputs">
@@ -45,15 +58,15 @@ const TodoForm = () => {
     );
 };
 
-const TodoItems = () => {
+const TodoItems = ({todos, setTodos}) => {
     return (
         <div className="todoItems">
             <h2 className="title">Working</h2>
             <div className="itemsWrapper">
                 <div className="todoContainer">
                     <div>
-                        <h2>타이틀</h2>
-                        <div>내용</div>
+                        <h2>{todos[0].title}</h2>
+                        <div>{todos[0].body}</div>
                     </div>
 
                     <div className="btns">
@@ -66,8 +79,8 @@ const TodoItems = () => {
             <div className="itemsWrapper">
                 <div className="todoContainer">
                     <div>
-                        <h2>타이틀</h2>
-                        <div>내용</div>
+                        <h2>{todos[1].title}</h2>
+                        <div>{todos[1].body}</div>
                     </div>
 
                     <div className="btns">
