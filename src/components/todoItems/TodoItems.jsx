@@ -1,6 +1,6 @@
 import React from "react";
 import './todoItems.css';
-import Todo from './Todo';
+import Todo from '../todo/Todo';
 
 const TodoItems = ({todos,setTodos}) => {
 
@@ -15,6 +15,7 @@ const TodoItems = ({todos,setTodos}) => {
                                 todo = {todo}
                                 key={todo.id}
                                 setTodos={setTodos}
+                                todos ={todos}
                                 />
                             );
                         }
@@ -29,6 +30,7 @@ const TodoItems = ({todos,setTodos}) => {
                                 todo = {todo}
                                 key={todo.id}
                                 setTodos={setTodos}
+                                todos ={todos}
                                 />
                             );
                         }else{
