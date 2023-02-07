@@ -90,6 +90,11 @@ const TodoForm = ({ todos, setTodos }) => {
 };
 
 const TodoItems = ({ todos, setTodos }) => {
+  const deleteTodos = (id) => {
+    const newTodos = todos.filter(todo => todo.id !== id);
+    setTodos(newTodos);
+  };
+
     return (
         <div className="todoItems">
             <h2 className="title">Working</h2>
@@ -99,9 +104,8 @@ const TodoItems = ({ todos, setTodos }) => {
                         return (
                             <Todo
                                 key={todo.id}
-                                todos={todos}
-                                setTodos={setTodos}
                                 todo={todo}
+                                deleteTodos={deleteTodos}
                             />
                         );
                     }
@@ -114,9 +118,8 @@ const TodoItems = ({ todos, setTodos }) => {
                         return (
                             <Todo
                                 key={todo.id}
-                                todos={todos}
-                                setTodos={setTodos}
                                 todo={todo}
+                                deleteTodos={deleteTodos}
                             />
                         );
                     } else return null;
@@ -126,7 +129,7 @@ const TodoItems = ({ todos, setTodos }) => {
     );
 };
 
-const Todo = ({ todo }) => {
+const Todo = ({ todo, deleteTodos }) => {
     return (
         <div className="todoContainer">
             <div>
@@ -134,8 +137,8 @@ const Todo = ({ todo }) => {
                 <div>{todo.body}</div>
             </div>
 
-            <div className="btns">
-                <button>삭제</button>
+            <div className="btns" >
+                <button onClick={() => deleteTodos(todo.id)}>삭제</button>
                 <button>{todo.isDone ? "취소" : "완료"}</button>
             </div>
         </div>
